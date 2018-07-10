@@ -1,0 +1,27 @@
+# https://community.rti.com/kb/how-use-rti-connext-dds-communicate-across-docker-containers-using-host-driver
+# docker run -it --network="host" --ipc=host osrf/ros2:bouncy-basic ros2 run demo_nodes_cpp talker
+# docker run -it --network="host" --ipc=host osrf/ros2:bouncy-basic ros2 run demo_nodes_cpp listener
+version: '3'
+
+services:
+  talker:
+    build: .
+    environment:
+      - "ROS_DOMAIN_ID=0"
+      # - "RMW_IMPLEMENTATION=rmw_connext_cpp"
+      # - "RMW_IMPLEMENTATION=rmw_fastrtps_cpp"
+      # - "RMW_IMPLEMENTATION=rmw_opensplice_cpp"
+    # network_mode: "host"
+    # ipc: host
+    command: ros2 run demo_nodes_cpp talker
+
+  listener:
+    build: .
+    environment:
+      - "ROS_DOMAIN_ID=0"
+      # - "RMW_IMPLEMENTATION=rmw_connext_cpp"
+      # - "RMW_IMPLEMENTATION=rmw_fastrtps_cpp"
+      # - "RMW_IMPLEMENTATION=rmw_opensplice_cpp"
+    # network_mode: "host"
+    # ipc: host
+    command: ros2 run demo_nodes_cpp listener
