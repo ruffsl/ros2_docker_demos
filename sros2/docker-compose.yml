@@ -1,0 +1,41 @@
+version: '3'
+
+services:
+  talker:
+    build: .
+    environment:
+      - "ROS_DOMAIN_ID=0"
+      - "ROS_SECURITY_ROOT_DIRECTORY=/sros2_demo/demo_keys"
+      - "ROS_SECURITY_ENABLE=true"
+      - "ROS_SECURITY_STRATEGY=Enforce"
+      - "RMW_IMPLEMENTATION=rmw_connext_cpp"
+      # - "RMW_IMPLEMENTATION=rmw_fastrtps_cpp"
+      # - "RMW_IMPLEMENTATION=rmw_opensplice_cpp"
+      - "RTI_LICENSE_FILE=/sros2_demo/rti_license.dat"
+    volumes:
+      - sros2_demo:/sros2_demo
+    command: ros2 run demo_nodes_cpp talker
+    # logging:
+    #   driver: none
+
+  listener:
+    build: .
+    environment:
+      - "ROS_DOMAIN_ID=0"
+      - "ROS_SECURITY_ROOT_DIRECTORY=/sros2_demo/demo_keys"
+      - "ROS_SECURITY_ENABLE=true"
+      - "ROS_SECURITY_STRATEGY=Enforce"
+      - "RMW_IMPLEMENTATION=rmw_connext_cpp"
+      # - "RMW_IMPLEMENTATION=rmw_fastrtps_cpp"
+      # - "RMW_IMPLEMENTATION=rmw_opensplice_cpp"
+      - "RTI_LICENSE_FILE=/sros2_demo/rti_license.dat"
+    volumes:
+      - sros2_demo:/sros2_demo
+    command: ros2 run demo_nodes_cpp listener
+    # command: sleep infinity
+    # logging:
+    #   driver: none
+
+volumes:
+  sros2_demo:
+    external: true
