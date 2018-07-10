@@ -102,3 +102,6 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# sros2
+/sros2/sros2_demo/rti_license.dat
