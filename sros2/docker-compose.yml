@@ -14,6 +14,8 @@ services:
       - "RTI_LICENSE_FILE=/sros2_demo/rti_license.dat"
     volumes:
       - sros2_demo:/sros2_demo
+    network_mode: "host"
+    ipc: host
     command: ros2 run demo_nodes_cpp talker
     # logging:
     #   driver: none
@@ -31,6 +33,8 @@ services:
       - "RTI_LICENSE_FILE=/sros2_demo/rti_license.dat"
     volumes:
       - sros2_demo:/sros2_demo
+    network_mode: "host"
+    ipc: host
     command: ros2 run demo_nodes_cpp listener
     # command: sleep infinity
     # logging:
