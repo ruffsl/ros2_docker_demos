@@ -37,6 +37,16 @@ docker run -it --rm \
   ./keystore_setup.bash
 ```
 
+> You could also create the keystore using keymint instead. Keymint is a more advanced meta-build tools for generating cryptographic artifacts.
+
+```
+docker run -it --rm \
+  --volume sros2_demo:/sros2_demo \
+  --workdir /sros2_demo \
+  keymint:keymint_tools \
+  ./keymint_setup.bash
+```
+
 > Finally we can use docker-compose to build and launch our secure talker listener example. You may wish to read through the compose file while the image is being built to observe the necessary environment variables for runtime deployment.
 
 ```
