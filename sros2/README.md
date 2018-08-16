@@ -20,7 +20,7 @@ cp <path-to>/rti_license.dat `pwd`/sros2_demo
 ```
 docker volume create sros2_demo
 
-docker run --rm \
+docker run -it --rm \
   --volume `pwd`/sros2_demo:/tmp \
   --volume sros2_demo:/sros2_demo \
   busybox \
