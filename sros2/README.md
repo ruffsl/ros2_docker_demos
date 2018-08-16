@@ -43,7 +43,7 @@ docker run -it --rm \
 docker run -it --rm \
   --volume sros2_demo:/sros2_demo \
   --workdir /sros2_demo \
-  keymint:keymint_tools \
+  keymint/keymint_tools \
   ./keymint_setup.bash
 ```
 
