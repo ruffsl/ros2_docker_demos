@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+rm -rfv demo_keys
 keymint keystore init --bootstrap keymint_ros
 keymint keystore create_pkg talker
 keymint keystore create_pkg listener
