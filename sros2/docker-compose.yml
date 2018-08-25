@@ -2,14 +2,15 @@ version: '3'
 
 services:
   talker:
-    build: .
+    # build: .
+    image: osrf/ros2:bouncy-basic
     environment:
       - "ROS_DOMAIN_ID=0"
-      # - "ROS_SECURITY_ROOT_DIRECTORY=/sros2_demo/demo_keys"
-      # - "ROS_SECURITY_ENABLE=true"
-      # - "ROS_SECURITY_STRATEGY=Enforce"
-      - "RMW_IMPLEMENTATION=rmw_connext_cpp"
-      # - "RMW_IMPLEMENTATION=rmw_fastrtps_cpp"
+      - "ROS_SECURITY_ROOT_DIRECTORY=/sros2_demo/demo_keys"
+      - "ROS_SECURITY_ENABLE=true"
+      - "ROS_SECURITY_STRATEGY=Enforce"
+      # - "RMW_IMPLEMENTATION=rmw_connext_cpp"
+      - "RMW_IMPLEMENTATION=rmw_fastrtps_cpp"
       # - "RMW_IMPLEMENTATION=rmw_opensplice_cpp"
       - "RTI_LICENSE_FILE=/sros2_demo/rti_license.dat"
     volumes:
@@ -20,14 +21,15 @@ services:
     command: ros2 run demo_nodes_cpp talker
 
   listener:
-    build: .
+    # build: .
+    image: osrf/ros2:bouncy-basic
     environment:
       - "ROS_DOMAIN_ID=0"
-      # - "ROS_SECURITY_ROOT_DIRECTORY=/sros2_demo/demo_keys"
-      # - "ROS_SECURITY_ENABLE=true"
-      # - "ROS_SECURITY_STRATEGY=Enforce"
-      - "RMW_IMPLEMENTATION=rmw_connext_cpp"
-      # - "RMW_IMPLEMENTATION=rmw_fastrtps_cpp"
+      - "ROS_SECURITY_ROOT_DIRECTORY=/sros2_demo/demo_keys"
+      - "ROS_SECURITY_ENABLE=true"
+      - "ROS_SECURITY_STRATEGY=Enforce"
+      # - "RMW_IMPLEMENTATION=rmw_connext_cpp"
+      - "RMW_IMPLEMENTATION=rmw_fastrtps_cpp"
       # - "RMW_IMPLEMENTATION=rmw_opensplice_cpp"
       - "RTI_LICENSE_FILE=/sros2_demo/rti_license.dat"
     volumes:
