@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+rm -rfv build install private profile public src
 rm -rfv demo_keys
 keymint keystore init --bootstrap keymint_ros
 
