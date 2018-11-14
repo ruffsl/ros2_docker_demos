@@ -2,8 +2,8 @@ version: '3'
 
 services:
   talker:
-    # build: .
-    image: osrf/ros2:bouncy-basic
+    build: .
+    # image: osrf/ros2:bouncy-basic
     environment:
       - "ROS_DOMAIN_ID=0"
       - "ROS_SECURITY_ROOT_DIRECTORY=/sros2_demo/demo_keys"
@@ -21,8 +21,8 @@ services:
     command: ros2 run demo_nodes_cpp talker
 
   listener:
-    # build: .
-    image: osrf/ros2:bouncy-basic
+    build: .
+    # image: osrf/ros2:bouncy-basic
     environment:
       - "ROS_DOMAIN_ID=0"
       - "ROS_SECURITY_ROOT_DIRECTORY=/sros2_demo/demo_keys"
