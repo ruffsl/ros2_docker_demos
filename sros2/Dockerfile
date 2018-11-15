@@ -120,7 +120,8 @@ RUN source "/opt/rti/rti_connext_dds-$RTI_CONNEXT_VERSION/resource/scripts/rtise
     --symlink-install \
     --packages-up-to \
       ros2run \
-      demo_nodes_cpp
+      demo_nodes_cpp \
+      sros2
 
 # setup bashrc
 RUN cp /etc/skel/.bashrc ~/
