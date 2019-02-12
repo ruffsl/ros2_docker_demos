@@ -17,6 +17,8 @@
 
 #include "my_bridge/bridge_node.hpp"
 
+#include "my_protobuf/proto/transform.pb.h"
+
 using std::placeholders::_1;
 using std::placeholders::_2;
 using std::placeholders::_3;
@@ -31,6 +33,8 @@ Bridge::Bridge(const std::string & node_name)
     "chatter", std::bind(&Bridge::message_callback, this, _1));
   server_ = this->create_service<AddTwoInts>(
     "add_two_ints", std::bind(&Bridge::service_callback, this, _1, _2, _3));
+
+  auto foo = cartographer::transform::proto::Quaterniond();
 }
 
 void Bridge::service_callback(
