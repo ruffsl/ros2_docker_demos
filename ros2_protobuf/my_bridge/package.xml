@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>my_bridge</name>
+  <version>0.0.1</version>
+  <description>Bridge interface for Protobuf</description>
+  <maintainer email="roxfoxpox@gmail.com">Ruffin White</maintainer>
+  <license>Apache License 2.0</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <build_depend>my_common</build_depend>
+
+  <depend>example_interfaces</depend>
+  <depend>my_protobuf</depend>
+  <depend>protobuf-dev</depend>
+  <depend>rclcpp</depend>
+  <depend>std_msgs</depend>
+
+  <test_depend>ament_cmake_gmock</test_depend>
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>
